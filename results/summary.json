@@ -1,0 +1,610 @@
+{
+  "validation": [
+    {
+      "year": "Nov23-Oct24",
+      "hours": 8784,
+      "aef_gen_weighted": 272.694,
+      "aef_mean": 284.853,
+      "ec_co2eq_mean": 383.159,
+      "pearson": 0.991,
+      "within_day_spearman": 0.962,
+      "direct_co2_mt": 116.399,
+      "gen_twh": 426.849,
+      "fossil_share": 0.335
+    },
+    {
+      "year": "Nov24-Oct25",
+      "hours": 8760,
+      "aef_gen_weighted": 281.529,
+      "aef_mean": 295.891,
+      "ec_co2eq_mean": 394.488,
+      "pearson": 0.992,
+      "within_day_spearman": 0.957,
+      "direct_co2_mt": 120.197,
+      "gen_twh": 426.944,
+      "fossil_share": 0.357
+    },
+    {
+      "year": "Nov25-Oct26",
+      "hours": 8760,
+      "aef_gen_weighted": 272.268,
+      "aef_mean": 288.964,
+      "ec_co2eq_mean": 383.931,
+      "pearson": 0.991,
+      "within_day_spearman": 0.958,
+      "direct_co2_mt": 124.804,
+      "gen_twh": 458.387,
+      "fossil_share": 0.352
+    }
+  ],
+  "hours_total": 26304,
+  "hours_missing_aef": 0,
+  "mef": {
+    "train_mean_t_per_mwh": 0.187,
+    "train_median_r2": 0.304,
+    "test_mean_t_per_mwh": 0.176,
+    "load_regressor_train_mean": 0.137,
+    "load_regressor_median_r2": 0.048,
+    "train_vs_test_bin_corr": 0.623,
+    "test_aef_mean_t_per_mwh": 0.289,
+    "import_adjusted_mean_t_per_mwh": {
+      "imports_at_0": 0.176,
+      "imports_at_gas_0.404": 0.317,
+      "imports_at_lignite_0.957": 0.51
+    },
+    "domestic_fossil_response_share": 0.264,
+    "test_hourly_corr_mef_vs_aef": -0.149
+  },
+  "residual_load_response_shares": {
+    "lignite": 0.093,
+    "hard_coal": 0.054,
+    "gas": 0.113,
+    "other_fossil": 0.003,
+    "biomass": 0.032,
+    "hydro_and_pumped_net": 0.275,
+    "net_import": 0.349,
+    "wind_solar": -0.79
+  },
+  "forecast": [
+    {
+      "model": "naive_d7",
+      "mae": 104.661,
+      "rmse": 134.763,
+      "bias": -3.275,
+      "within_day_spearman": 0.567
+    },
+    {
+      "model": "naive_d2",
+      "mae": 91.007,
+      "rmse": 119.035,
+      "bias": -1.306,
+      "within_day_spearman": 0.62
+    },
+    {
+      "model": "price_only",
+      "mae": 73.845,
+      "rmse": 93.117,
+      "bias": 41.735,
+      "within_day_spearman": 0.68
+    },
+    {
+      "model": "ridge",
+      "mae": 32.942,
+      "rmse": 42.679,
+      "bias": -9.427,
+      "within_day_spearman": 0.921
+    },
+    {
+      "model": "gbm",
+      "mae": 24.819,
+      "rmse": 31.789,
+      "bias": 0.282,
+      "within_day_spearman": 0.93
+    }
+  ],
+  "forecast_test_hours": 8758,
+  "schedule_days": 363,
+  "schedule": [
+    {
+      "case": "daily_flex_6MWh",
+      "strategy": "asap",
+      "energy_mwh": 2178.0,
+      "cost_eur": 240632.37,
+      "eur_per_mwh": 110.48,
+      "co2_aef_t": 768.93,
+      "co2_mef_t": 346.26,
+      "co2_ec_t": 982.58,
+      "aef_kg_per_mwh": 353.04,
+      "d_cost_vs_price_eur": 118597.82,
+      "d_co2_aef_vs_price_t": 337.01,
+      "d_co2_mef_vs_price_t": -76.91,
+      "d_co2_aef_vs_asap_pct": 0.0,
+      "d_co2_mef_vs_asap_pct": 0.0,
+      "abatement_eur_per_t_aef": NaN
+    },
+    {
+      "case": "daily_flex_6MWh",
+      "strategy": "price",
+      "energy_mwh": 2178.0,
+      "cost_eur": 122034.55,
+      "eur_per_mwh": 56.03,
+      "co2_aef_t": 431.92,
+      "co2_mef_t": 423.17,
+      "co2_ec_t": 582.78,
+      "aef_kg_per_mwh": 198.31,
+      "d_cost_vs_price_eur": 0.0,
+      "d_co2_aef_vs_price_t": 0.0,
+      "d_co2_mef_vs_price_t": 0.0,
+      "d_co2_aef_vs_asap_pct": -43.83,
+      "d_co2_mef_vs_asap_pct": 22.21,
+      "abatement_eur_per_t_aef": NaN
+    },
+    {
+      "case": "daily_flex_6MWh",
+      "strategy": "carbon_fc",
+      "energy_mwh": 2178.0,
+      "cost_eur": 133362.3,
+      "eur_per_mwh": 61.23,
+      "co2_aef_t": 409.99,
+      "co2_mef_t": 429.26,
+      "co2_ec_t": 559.4,
+      "aef_kg_per_mwh": 188.24,
+      "d_cost_vs_price_eur": 11327.75,
+      "d_co2_aef_vs_price_t": -21.92,
+      "d_co2_mef_vs_price_t": 6.08,
+      "d_co2_aef_vs_asap_pct": -46.68,
+      "d_co2_mef_vs_asap_pct": 23.97,
+      "abatement_eur_per_t_aef": 516.71
+    },
+    {
+      "case": "daily_flex_6MWh",
+      "strategy": "carbon_oracle",
+      "energy_mwh": 2178.0,
+      "cost_eur": 134602.94,
+      "eur_per_mwh": 61.8,
+      "co2_aef_t": 405.96,
+      "co2_mef_t": 429.48,
+      "co2_ec_t": 554.99,
+      "aef_kg_per_mwh": 186.39,
+      "d_cost_vs_price_eur": 12568.39,
+      "d_co2_aef_vs_price_t": -25.96,
+      "d_co2_mef_vs_price_t": 6.31,
+      "d_co2_aef_vs_asap_pct": -47.2,
+      "d_co2_mef_vs_asap_pct": 24.03,
+      "abatement_eur_per_t_aef": 484.22
+    },
+    {
+      "case": "daily_flex_6MWh",
+      "strategy": "mef",
+      "energy_mwh": 2178.0,
+      "cost_eur": 236281.19,
+      "eur_per_mwh": 108.49,
+      "co2_aef_t": 586.66,
+      "co2_mef_t": 298.39,
+      "co2_ec_t": 799.84,
+      "aef_kg_per_mwh": 269.36,
+      "d_cost_vs_price_eur": 114246.64,
+      "d_co2_aef_vs_price_t": 154.74,
+      "d_co2_mef_vs_price_t": -124.78,
+      "d_co2_aef_vs_asap_pct": -23.7,
+      "d_co2_mef_vs_asap_pct": -13.83,
+      "abatement_eur_per_t_aef": NaN
+    },
+    {
+      "case": "daily_flex_6MWh",
+      "strategy": "blend_25",
+      "energy_mwh": 2178.0,
+      "cost_eur": 122075.27,
+      "eur_per_mwh": 56.05,
+      "co2_aef_t": 428.82,
+      "co2_mef_t": 424.8,
+      "co2_ec_t": 579.17,
+      "aef_kg_per_mwh": 196.89,
+      "d_cost_vs_price_eur": 40.72,
+      "d_co2_aef_vs_price_t": -3.09,
+      "d_co2_mef_vs_price_t": 1.63,
+      "d_co2_aef_vs_asap_pct": -44.23,
+      "d_co2_mef_vs_asap_pct": 22.68,
+      "abatement_eur_per_t_aef": 13.17
+    },
+    {
+      "case": "daily_flex_6MWh",
+      "strategy": "blend_50",
+      "energy_mwh": 2178.0,
+      "cost_eur": 122191.16,
+      "eur_per_mwh": 56.1,
+      "co2_aef_t": 425.76,
+      "co2_mef_t": 426.69,
+      "co2_ec_t": 575.63,
+      "aef_kg_per_mwh": 195.48,
+      "d_cost_vs_price_eur": 156.61,
+      "d_co2_aef_vs_price_t": -6.16,
+      "d_co2_mef_vs_price_t": 3.52,
+      "d_co2_aef_vs_asap_pct": -44.63,
+      "d_co2_mef_vs_asap_pct": 23.23,
+      "abatement_eur_per_t_aef": 25.44
+    },
+    {
+      "case": "daily_flex_6MWh",
+      "strategy": "blend_100",
+      "energy_mwh": 2178.0,
+      "cost_eur": 122514.71,
+      "eur_per_mwh": 56.25,
+      "co2_aef_t": 421.43,
+      "co2_mef_t": 429.24,
+      "co2_ec_t": 570.64,
+      "aef_kg_per_mwh": 193.49,
+      "d_cost_vs_price_eur": 480.16,
+      "d_co2_aef_vs_price_t": -10.49,
+      "d_co2_mef_vs_price_t": 6.07,
+      "d_co2_aef_vs_asap_pct": -45.19,
+      "d_co2_mef_vs_asap_pct": 23.96,
+      "abatement_eur_per_t_aef": 45.77
+    },
+    {
+      "case": "daily_flex_6MWh",
+      "strategy": "blend_200",
+      "energy_mwh": 2178.0,
+      "cost_eur": 122965.17,
+      "eur_per_mwh": 56.46,
+      "co2_aef_t": 418.9,
+      "co2_mef_t": 431.04,
+      "co2_ec_t": 567.73,
+      "aef_kg_per_mwh": 192.33,
+      "d_cost_vs_price_eur": 930.62,
+      "d_co2_aef_vs_price_t": -13.02,
+      "d_co2_mef_vs_price_t": 7.87,
+      "d_co2_aef_vs_asap_pct": -45.52,
+      "d_co2_mef_vs_asap_pct": 24.48,
+      "abatement_eur_per_t_aef": 71.5
+    },
+    {
+      "case": "daily_flex_6MWh",
+      "strategy": "blend_400",
+      "energy_mwh": 2178.0,
+      "cost_eur": 124197.96,
+      "eur_per_mwh": 57.02,
+      "co2_aef_t": 414.91,
+      "co2_mef_t": 433.08,
+      "co2_ec_t": 563.19,
+      "aef_kg_per_mwh": 190.5,
+      "d_cost_vs_price_eur": 2163.41,
+      "d_co2_aef_vs_price_t": -17.01,
+      "d_co2_mef_vs_price_t": 9.91,
+      "d_co2_aef_vs_asap_pct": -46.04,
+      "d_co2_mef_vs_asap_pct": 25.07,
+      "abatement_eur_per_t_aef": 127.21
+    },
+    {
+      "case": "daily_flex_6MWh",
+      "strategy": "blend_1000",
+      "energy_mwh": 2178.0,
+      "cost_eur": 126449.23,
+      "eur_per_mwh": 58.06,
+      "co2_aef_t": 411.86,
+      "co2_mef_t": 432.66,
+      "co2_ec_t": 559.97,
+      "aef_kg_per_mwh": 189.1,
+      "d_cost_vs_price_eur": 4414.68,
+      "d_co2_aef_vs_price_t": -20.05,
+      "d_co2_mef_vs_price_t": 9.48,
+      "d_co2_aef_vs_asap_pct": -46.44,
+      "d_co2_mef_vs_asap_pct": 24.95,
+      "abatement_eur_per_t_aef": 220.13
+    },
+    {
+      "case": "daytime_4MWh_08-18",
+      "strategy": "asap",
+      "energy_mwh": 1452.0,
+      "cost_eur": 144696.57,
+      "eur_per_mwh": 99.65,
+      "co2_aef_t": 332.91,
+      "co2_mef_t": 302.58,
+      "co2_ec_t": 449.25,
+      "aef_kg_per_mwh": 229.28,
+      "d_cost_vs_price_eur": 61094.28,
+      "d_co2_aef_vs_price_t": 59.97,
+      "d_co2_mef_vs_price_t": 36.89,
+      "d_co2_aef_vs_asap_pct": 0.0,
+      "d_co2_mef_vs_asap_pct": 0.0,
+      "abatement_eur_per_t_aef": NaN
+    },
+    {
+      "case": "daytime_4MWh_08-18",
+      "strategy": "price",
+      "energy_mwh": 1452.0,
+      "cost_eur": 83602.29,
+      "eur_per_mwh": 57.58,
+      "co2_aef_t": 272.94,
+      "co2_mef_t": 265.69,
+      "co2_ec_t": 373.13,
+      "aef_kg_per_mwh": 187.98,
+      "d_cost_vs_price_eur": 0.0,
+      "d_co2_aef_vs_price_t": 0.0,
+      "d_co2_mef_vs_price_t": 0.0,
+      "d_co2_aef_vs_asap_pct": -18.01,
+      "d_co2_mef_vs_asap_pct": -12.19,
+      "abatement_eur_per_t_aef": NaN
+    },
+    {
+      "case": "daytime_4MWh_08-18",
+      "strategy": "carbon_fc",
+      "energy_mwh": 1452.0,
+      "cost_eur": 87344.38,
+      "eur_per_mwh": 60.15,
+      "co2_aef_t": 270.96,
+      "co2_mef_t": 267.12,
+      "co2_ec_t": 371.33,
+      "aef_kg_per_mwh": 186.61,
+      "d_cost_vs_price_eur": 3742.09,
+      "d_co2_aef_vs_price_t": -1.99,
+      "d_co2_mef_vs_price_t": 1.43,
+      "d_co2_aef_vs_asap_pct": -18.61,
+      "d_co2_mef_vs_asap_pct": -11.72,
+      "abatement_eur_per_t_aef": 1882.7
+    },
+    {
+      "case": "daytime_4MWh_08-18",
+      "strategy": "carbon_oracle",
+      "energy_mwh": 1452.0,
+      "cost_eur": 87177.47,
+      "eur_per_mwh": 60.04,
+      "co2_aef_t": 269.15,
+      "co2_mef_t": 265.74,
+      "co2_ec_t": 369.49,
+      "aef_kg_per_mwh": 185.36,
+      "d_cost_vs_price_eur": 3575.18,
+      "d_co2_aef_vs_price_t": -3.8,
+      "d_co2_mef_vs_price_t": 0.05,
+      "d_co2_aef_vs_asap_pct": -19.15,
+      "d_co2_mef_vs_asap_pct": -12.18,
+      "abatement_eur_per_t_aef": 942.0
+    },
+    {
+      "case": "daytime_4MWh_08-18",
+      "strategy": "mef",
+      "energy_mwh": 1452.0,
+      "cost_eur": 102946.81,
+      "eur_per_mwh": 70.9,
+      "co2_aef_t": 294.73,
+      "co2_mef_t": 256.05,
+      "co2_ec_t": 402.28,
+      "aef_kg_per_mwh": 202.98,
+      "d_cost_vs_price_eur": 19344.52,
+      "d_co2_aef_vs_price_t": 21.78,
+      "d_co2_mef_vs_price_t": -9.64,
+      "d_co2_aef_vs_asap_pct": -11.47,
+      "d_co2_mef_vs_asap_pct": -15.38,
+      "abatement_eur_per_t_aef": NaN
+    },
+    {
+      "case": "daytime_4MWh_08-18",
+      "strategy": "blend_25",
+      "energy_mwh": 1452.0,
+      "cost_eur": 83606.39,
+      "eur_per_mwh": 57.58,
+      "co2_aef_t": 272.48,
+      "co2_mef_t": 265.63,
+      "co2_ec_t": 372.58,
+      "aef_kg_per_mwh": 187.66,
+      "d_cost_vs_price_eur": 4.1,
+      "d_co2_aef_vs_price_t": -0.46,
+      "d_co2_mef_vs_price_t": -0.06,
+      "d_co2_aef_vs_asap_pct": -18.15,
+      "d_co2_mef_vs_asap_pct": -12.21,
+      "abatement_eur_per_t_aef": 8.9
+    },
+    {
+      "case": "daytime_4MWh_08-18",
+      "strategy": "blend_50",
+      "energy_mwh": 1452.0,
+      "cost_eur": 83615.01,
+      "eur_per_mwh": 57.59,
+      "co2_aef_t": 272.34,
+      "co2_mef_t": 265.51,
+      "co2_ec_t": 372.35,
+      "aef_kg_per_mwh": 187.56,
+      "d_cost_vs_price_eur": 12.72,
+      "d_co2_aef_vs_price_t": -0.61,
+      "d_co2_mef_vs_price_t": -0.18,
+      "d_co2_aef_vs_asap_pct": -18.2,
+      "d_co2_mef_vs_asap_pct": -12.25,
+      "abatement_eur_per_t_aef": 21.01
+    },
+    {
+      "case": "daytime_4MWh_08-18",
+      "strategy": "blend_100",
+      "energy_mwh": 1452.0,
+      "cost_eur": 83634.33,
+      "eur_per_mwh": 57.6,
+      "co2_aef_t": 272.09,
+      "co2_mef_t": 265.38,
+      "co2_ec_t": 372.08,
+      "aef_kg_per_mwh": 187.39,
+      "d_cost_vs_price_eur": 32.04,
+      "d_co2_aef_vs_price_t": -0.85,
+      "d_co2_mef_vs_price_t": -0.31,
+      "d_co2_aef_vs_asap_pct": -18.27,
+      "d_co2_mef_vs_asap_pct": -12.29,
+      "abatement_eur_per_t_aef": 37.66
+    },
+    {
+      "case": "daytime_4MWh_08-18",
+      "strategy": "blend_200",
+      "energy_mwh": 1452.0,
+      "cost_eur": 83689.48,
+      "eur_per_mwh": 57.64,
+      "co2_aef_t": 271.75,
+      "co2_mef_t": 265.19,
+      "co2_ec_t": 371.7,
+      "aef_kg_per_mwh": 187.15,
+      "d_cost_vs_price_eur": 87.19,
+      "d_co2_aef_vs_price_t": -1.2,
+      "d_co2_mef_vs_price_t": -0.5,
+      "d_co2_aef_vs_asap_pct": -18.37,
+      "d_co2_mef_vs_asap_pct": -12.36,
+      "abatement_eur_per_t_aef": 72.86
+    },
+    {
+      "case": "daytime_4MWh_08-18",
+      "strategy": "blend_400",
+      "energy_mwh": 1452.0,
+      "cost_eur": 83822.08,
+      "eur_per_mwh": 57.73,
+      "co2_aef_t": 271.37,
+      "co2_mef_t": 264.99,
+      "co2_ec_t": 371.3,
+      "aef_kg_per_mwh": 186.89,
+      "d_cost_vs_price_eur": 219.79,
+      "d_co2_aef_vs_price_t": -1.57,
+      "d_co2_mef_vs_price_t": -0.71,
+      "d_co2_aef_vs_asap_pct": -18.49,
+      "d_co2_mef_vs_asap_pct": -12.42,
+      "abatement_eur_per_t_aef": 139.62
+    },
+    {
+      "case": "daytime_4MWh_08-18",
+      "strategy": "blend_1000",
+      "energy_mwh": 1452.0,
+      "cost_eur": 84251.72,
+      "eur_per_mwh": 58.02,
+      "co2_aef_t": 271.0,
+      "co2_mef_t": 265.8,
+      "co2_ec_t": 371.01,
+      "aef_kg_per_mwh": 186.64,
+      "d_cost_vs_price_eur": 649.43,
+      "d_co2_aef_vs_price_t": -1.94,
+      "d_co2_mef_vs_price_t": 0.11,
+      "d_co2_aef_vs_asap_pct": -18.6,
+      "d_co2_mef_vs_asap_pct": -12.15,
+      "abatement_eur_per_t_aef": 334.0
+    }
+  ],
+  "schedule_bootstrap": {
+    "daily_flex_6MWh|carbon_fc-price|aef": {
+      "mean_t_per_day": -0.0604,
+      "ci95": [
+        -0.0734,
+        -0.0479
+      ]
+    },
+    "daily_flex_6MWh|carbon_fc-price|mef": {
+      "mean_t_per_day": 0.0168,
+      "ci95": [
+        0.0067,
+        0.0272
+      ]
+    },
+    "daily_flex_6MWh|mef-price|mef": {
+      "mean_t_per_day": -0.3438,
+      "ci95": [
+        -0.3589,
+        -0.3274
+      ]
+    },
+    "daytime_4MWh_08-18|carbon_fc-price|aef": {
+      "mean_t_per_day": -0.0055,
+      "ci95": [
+        -0.0071,
+        -0.004
+      ]
+    },
+    "daytime_4MWh_08-18|carbon_fc-price|mef": {
+      "mean_t_per_day": 0.0039,
+      "ci95": [
+        -0.0029,
+        0.0111
+      ]
+    },
+    "daytime_4MWh_08-18|mef-price|mef": {
+      "mean_t_per_day": -0.0266,
+      "ci95": [
+        -0.0339,
+        -0.0192
+      ]
+    }
+  },
+  "bess": [
+    {
+      "signal": "none",
+      "carbon_price": 0,
+      "revenue_eur": 93832.6,
+      "discharge_mwh": 1438.57,
+      "co2_aef_t": -48.34,
+      "co2_mef_t": 59.4,
+      "co2_ec_t": -85.64
+    },
+    {
+      "signal": "aef_fc",
+      "carbon_price": 50,
+      "revenue_eur": 93612.96,
+      "discharge_mwh": 1217.96,
+      "co2_aef_t": -57.68,
+      "co2_mef_t": 56.31,
+      "co2_ec_t": -97.3
+    },
+    {
+      "signal": "aef_fc",
+      "carbon_price": 100,
+      "revenue_eur": 93165.1,
+      "discharge_mwh": 1151.23,
+      "co2_aef_t": -63.31,
+      "co2_mef_t": 55.88,
+      "co2_ec_t": -103.61
+    },
+    {
+      "signal": "aef_fc",
+      "carbon_price": 200,
+      "revenue_eur": 91597.16,
+      "discharge_mwh": 1051.14,
+      "co2_aef_t": -73.74,
+      "co2_mef_t": 54.32,
+      "co2_ec_t": -114.6
+    },
+    {
+      "signal": "aef_fc",
+      "carbon_price": 400,
+      "revenue_eur": 87661.35,
+      "discharge_mwh": 928.61,
+      "co2_aef_t": -86.31,
+      "co2_mef_t": 47.56,
+      "co2_ec_t": -126.25
+    },
+    {
+      "signal": "mef",
+      "carbon_price": 50,
+      "revenue_eur": 93096.2,
+      "discharge_mwh": 1256.34,
+      "co2_aef_t": -50.63,
+      "co2_mef_t": 33.78,
+      "co2_ec_t": -88.55
+    },
+    {
+      "signal": "mef",
+      "carbon_price": 100,
+      "revenue_eur": 91099.44,
+      "discharge_mwh": 1240.91,
+      "co2_aef_t": -50.8,
+      "co2_mef_t": 9.87,
+      "co2_ec_t": -87.31
+    },
+    {
+      "signal": "mef",
+      "carbon_price": 200,
+      "revenue_eur": 84890.53,
+      "discharge_mwh": 1326.27,
+      "co2_aef_t": -46.22,
+      "co2_mef_t": -20.2,
+      "co2_ec_t": -78.01
+    },
+    {
+      "signal": "mef",
+      "carbon_price": 400,
+      "revenue_eur": 70393.49,
+      "discharge_mwh": 1567.48,
+      "co2_aef_t": -28.49,
+      "co2_mef_t": -54.39,
+      "co2_ec_t": -48.96
+    }
+  ]
+}

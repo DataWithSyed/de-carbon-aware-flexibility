@@ -1,0 +1,17 @@
+type,kg_co2_per_tj,efficiency,t_co2_per_mwh,source
+lignite,101000.0,0.38,0.9568,IPCC 2006 GL V2 Ch2 Table 2.2 lignite; ASSUMED eta 38 %
+hard_coal,94600.0,0.42,0.8109,IPCC 2006 GL V2 Ch2 Table 2.2 other bituminous coal; ASSUMED eta 42 %
+gas,56100.0,0.5,0.4039,IPCC 2006 GL V2 Ch2 Table 2.2 natural gas; ASSUMED fleet eta 50 % (CCGT/CHP/OCGT mix)
+oil,77400.0,0.38,0.7333,IPCC 2006 GL V2 Ch2 Table 2.2 residual fuel oil; ASSUMED eta 38 %
+coal_gas,94600.0,0.42,0.8109,PROXY: hard-coal factor (coke-oven/blast-furnace mix unknown)
+waste,45850.0,0.25,0.6602,"IPCC 2006 GL V2 Ch2 Table 2.2 MSW non-biomass 91,700 x ASSUMED 50 % fossil share; ASSUMED eta 25 %"
+others,56100.0,0.5,0.4039,PROXY: natural-gas factor
+biomass,0.0,1.0,0.0,biogenic CO2 excluded (direct fossil CO2 only)
+hydro_ror,0.0,1.0,0.0,no direct combustion
+hydro_res,0.0,1.0,0.0,no direct combustion
+pumped_gen,0.0,1.0,0.0,no direct combustion
+geothermal,0.0,1.0,0.0,no direct combustion
+wind_on,0.0,1.0,0.0,no direct combustion
+wind_off,0.0,1.0,0.0,no direct combustion
+solar,0.0,1.0,0.0,no direct combustion
+nuclear,0.0,1.0,0.0,no direct combustion
